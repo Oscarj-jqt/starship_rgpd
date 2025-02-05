@@ -8,7 +8,7 @@ class Starship
         private int $id,
         private string $name,
         private string $description,
-        private int $captain,
+        private string $captain,
         private string $status,
     ) {
     }
