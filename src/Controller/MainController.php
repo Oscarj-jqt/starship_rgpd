@@ -13,9 +13,8 @@ class MainController extends AbstractController
     #[Route('/')]
     public function homepage(): Response
     {
-
         // Here the response (dev) of the request with a status (200 Ok or 404 error...)
-        //twig redirect a file matching with the method name (homepage here)
+        // twig redirect a file matching with the method name (homepage here)
         return $this->render('main/homepage.html.twig');
     }
 }
