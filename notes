@@ -1,0 +1,13 @@
+Création de l'app
+symfony new symfony_sql/symfony_sql --version="7.2.x" --webapp
+
+Lancer le serveur
+symfony serve
+
+Package de style de Symfony pour la convention de style
+composer require cs-fixer-shim
+Régler la structure des fichiers pour que ca corresponde à Symfony
+./vendor/bin/php-cs-fixer fix
+
+Utilisation de twig pour ajouter des templates HTML
+composer require twig
