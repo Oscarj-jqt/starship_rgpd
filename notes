@@ -11,3 +11,6 @@ Régler la structure des fichiers pour que ca corresponde à Symfony
 
 Utilisation de twig pour ajouter des templates HTML
 composer require twig
+
+Ajout du package serializer pour traiter les propriétés private avec des getters public (objet json)
+composer require serializer

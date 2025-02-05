@@ -18,7 +18,7 @@ class Starship
         return $this->id;
     }
 
-    public function getCaptain(): int
+    public function getCaptain(): string
     {
         return $this->captain;
     }
