@@ -16,30 +16,7 @@ class StarshipApiController extends AbstractController
     public function getCollection(LoggerInterface $logger, StarshipRepository $repository): Response
     {
         $logger->info('Starship collection retrieved');
-        dd($repository);
-        $starships = [
-            new Starship(
-                1,
-                'Starship 1',
-                'Garden',
-                'Jean-Luc Pickles',
-                'taken over by Q'
-            ),
-            new Starship(
-                2,
-                'Starship 2',
-                'Delta Tourist',
-                'Kathryn Journeyway',
-                'under construction'
-            ),
-            new Starship(
-                3,
-                'Starship 3',
-                'Latte',
-                'James T.Quick',
-                'repaired'
-            ),
-        ];
+        $starships = $repository->findAll();
 
         return $this->json($starships);
     }
