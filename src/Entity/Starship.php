@@ -22,9 +22,8 @@ class Starship
     #[ORM\Column(length: 128)]
     private ?string $captain = null;
 
-    #[ORM\Column(length: 20, enumType: StarshipStatusEnum::class)]
-    private StarshipStatusEnum $status;
-
+    #[ORM\Column(length: 50)]  // On laisse 50 caractères pour éviter les problèmes
+    private string $status;
 
     public function getId(): ?int
     {
@@ -67,12 +66,12 @@ class Starship
         return $this;
     }
 
-    public function getStatus(): StarshipStatusEnum
+    public function getStatus(): string
     {
         return $this->status;
     }
 
-    public function setStatus(StarshipStatusEnum $status): self
+    public function setStatus(string $status): self
     {
         $this->status = $status;
         return $this;
