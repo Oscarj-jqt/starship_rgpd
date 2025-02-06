@@ -22,7 +22,7 @@ class Starship
     #[ORM\Column(length: 128)]
     private ?string $captain = null;
 
-    #[ORM\Column(length: 50)]  // On laisse 50 caractères pour éviter les problèmes
+    #[ORM\Column(length: 50)] // On laisse 50 caractères pour éviter les problèmes
     private string $status;
 
     public function getId(): ?int
@@ -74,6 +74,7 @@ class Starship
     public function setStatus(string $status): self
     {
         $this->status = $status;
+
         return $this;
     }
 }

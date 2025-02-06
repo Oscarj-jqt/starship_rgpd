@@ -21,7 +21,7 @@ class MainController extends AbstractController
         // twig redirect a file matching with the method name (homepage here)
         return $this->render('main/homepage.html.twig', [
             'myShip' => $myShip,
-            'ships' => $ships
+            'ships' => $ships,
         ]);
     }
 }
