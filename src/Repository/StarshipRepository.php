@@ -2,55 +2,42 @@
 
 namespace App\Repository;
 
-use App\Model\Starship;
-use App\Model\StarshipStatusEnum;
-use Psr\Log\LoggerInterface;
+use App\Entity\Starship;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-class StarshipRepository
+/**
+ * @extends ServiceEntityRepository<Starship>
+ */
+class StarshipRepository extends ServiceEntityRepository
 {
-    public function __construct(private LoggerInterface $logger)
+    public function __construct(ManagerRegistry $registry)
     {
-
-    }
-    public function findAll(): array
-    {
-        $this->logger->info('Starship collection retrieved');
-
-        return [
-            new Starship(
-                1,
-                'Starship 1',
-                'Garden',
-                'Jean-Luc Pickles',
-                StarshipStatusEnum::COMPLETED
-            ),
-            new Starship(
-                2,
-                'Starship 2',
-                'Delta Tourist',
-                'Kathryn Journeyway',
-                StarshipStatusEnum::IN_PROGRESS
-            ),
-            new Starship(
-                3,
-                'Starship 3',
-                'Latte',
-                'James T.Quick',
-                StarshipStatusEnum::WAITING
-            ),
-        ];
+        parent::__construct($registry, Starship::class);
     }
 
-    public function find(int $id): ?Starship
-    {
-        foreach ($this->findAll() as $starship) {
-            if ($starship->getId() === $id) {
-                return $starship;
-            }
-        }
+//    /**
+//     * @return Starship[] Returns an array of Starship objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('s.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
 
-        return null;
-    }
-
-
+//    public function findOneBySomeField($value): ?Starship
+//    {
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
 }
