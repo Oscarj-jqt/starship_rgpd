@@ -14,3 +14,6 @@ composer require twig
 
 Ajout du package serializer pour traiter les propriétés private avec des getters public (objet json)
 composer require serializer
+
+Un service Symfony est un objet qui "travaille"
+exemple nos controller sont des services (créer des objets réponses)
