@@ -25,3 +25,8 @@ composer require symfony/orm-pack
 Puis configurer la connexion dans .env
 
 Ensuite Création des classes entités (table de la database)
+php bin/console make:entity starship
+
+Màj database
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
