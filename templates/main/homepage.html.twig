@@ -1,33 +1,33 @@
-<h1>Application <strong>symfony</strong></h1>
+<h1>Application <strong>Symfony</strong></h1>
 
 <div>
-    Browse through {{ numberOfStarships * 10 }} starships!
+    Parcourez {{ ships|length * 10 }} vaisseaux spatiaux !
 
-    {% if numberOfStarships > 400 %}
+    {% if ships|length > 2 %}
         <p>
-            That's a shipload of ships
+            C'est une cargaison de vaisseaux !
         </p>
     {% endif %}
 </div>
 
 <div>
-    <h2>My Ship</h2>
+    <h2>Mon Vaisseau</h2>
 
     <table>
         <tr>
-            <th>Name</th>
+            <th>Nom</th>
             <td>{{ myShip.name }}</td>
         </tr>
         <tr>
-            <th>Class</th>
+            <th>Classe</th>
             <td>{{ myShip.class }}</td>
         </tr>
         <tr>
-            <th>Captain</th>
-            <td>{{ myShip.captain }}</td>
+            <th>Capitaine</th>
+            <td>{{ myShip.captain|upper|lower|title }}</td>
         </tr>
         <tr>
-            <th>Status</th>
+            <th>Statut</th>
             <td>{{ myShip.status }}</td>
         </tr>
     </table>
