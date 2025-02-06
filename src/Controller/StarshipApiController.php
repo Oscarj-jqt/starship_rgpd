@@ -33,7 +33,7 @@ class StarshipApiController extends AbstractController
                 'Latte',
                 'James T.Quick',
                 'repaired'
-            )
+            ),
         ];
 
         return $this->json($starships);
