@@ -7,7 +7,7 @@ class Starship
     public function __construct(
         private int $id,
         private string $name,
-        private string $description,
+        private string $class,
         private string $captain,
         private string $status,
     ) {
@@ -23,9 +23,9 @@ class Starship
         return $this->captain;
     }
 
-    public function getDescription(): string
+    public function getClass(): string
     {
-        return $this->description;
+        return $this->class;
     }
 
     public function getName(): string
