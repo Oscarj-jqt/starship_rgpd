@@ -17,3 +17,5 @@ composer require serializer
 
 Un service Symfony est un objet qui "travaille"
 exemple nos controller sont des services (créer des objets réponses)
+
+Le Repository est une classe qui fetch un type de donnée
