@@ -19,3 +19,9 @@ Un service Symfony est un objet qui "travaille"
 exemple nos controller sont des services (créer des objets réponses)
 
 Le Repository est une classe qui fetch un type de donnée
+
+On utilise Doctrine pour connecter le project avec SQL database
+composer require symfony/orm-pack
+Puis configurer la connexion dans .env
+
+Ensuite Création des classes entités (table de la database)
