@@ -2,9 +2,9 @@
 
 namespace App\Logger;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Handler\AbstractProcessingHandler;
-use Monolog\Logger;
+use Monolog\LogRecord;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\DataProcessingLog;
 
 class DatabaseLogger extends AbstractProcessingHandler
@@ -13,18 +13,20 @@ class DatabaseLogger extends AbstractProcessingHandler
 
     public function __construct(EntityManagerInterface $entityManager)
     {
-        parent::__construct(Logger::INFO);
+        parent::__construct();
         $this->entityManager = $entityManager;
     }
 
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
-        $log = new DataProcessingLog();
-        $log->setUserId($record['extra']['userId'] ?? 0);
-        $log->setAction($record['message']);
-        $log->setTimestamp(new \DateTimeImmutable());
+        $logEntry = new DataProcessingLog();
+        $logEntry->setLevel($record->level->value); // Monolog 3 utilise un objet Level
+        $logEntry->setMessage($record->message);
+        $logEntry->setContext($record->context);
+        $logEntry->setCreatedAt(new \DateTime());
 
-        $this->entityManager->persist($log);
+        $this->entityManager->persist($logEntry);
         $this->entityManager->flush();
     }
 }
+

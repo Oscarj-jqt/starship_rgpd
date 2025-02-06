@@ -33,4 +33,11 @@ class StarshipApiController extends AbstractController
 
         return $this->json($starship);
     }
+
+    #[Route('/test-log', methods: ['GET'])]
+    public function testLog(LoggerInterface $logger): Response
+    {
+        $logger->info('Test log entry');
+        return new Response('Log ajouté');
+    }
 }
