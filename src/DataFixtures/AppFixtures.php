@@ -16,9 +16,9 @@ class AppFixtures extends Fixture
     {
         $this->passwordHasher = $passwordHasher;
     }
+
     public function load(ObjectManager $manager): void
     {
-
         // Création des utilisateurs (Admins, Pilotes, Customers)
         $admin = new User();
         $admin->setEmail('admin@starship.com');
@@ -44,7 +44,6 @@ class AppFixtures extends Fixture
         $customer->setPassword($this->passwordHasher->hashPassword($customer, 'customerpass'));
         $manager->persist($customer);
 
-
         $ships = [
             ['name' => 'Starship 1', 'class' => 'Explorer', 'captain' => $pilot1, 'status' => 'completed'],
             ['name' => 'Starship 2', 'class' => 'Destroyer', 'captain' => $pilot2, 'status' => 'in_progress'],
@@ -60,12 +59,7 @@ class AppFixtures extends Fixture
             $manager->persist($starship);
         }
 
-
         // Enregistre toutes les entités en base
         $manager->flush();
-
-
     }
-
-
 }

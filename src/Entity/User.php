@@ -67,9 +67,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function eraseCredentials(): void {
-//        Méthode permettant de supprimer des données sensibles
+    public function eraseCredentials(): void
+    {
+        //        Méthode permettant de supprimer des données sensibles
     }
+
     public function getUserIdentifier(): string
     {
         return $this->email;
