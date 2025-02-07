@@ -31,4 +31,4 @@ Màj database
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 
-
+La classe Interface permet d'utiliser une entité créée dans le système de sécurité de Syfony
