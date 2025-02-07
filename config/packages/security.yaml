@@ -21,10 +21,10 @@ security:
             logout:
                 path: /logout
             # Contrôle des accès selon les rôles JSON
-            access_control:
-                - { path: ^/admin, roles: ROLE_ADMIN }
-                - { path: ^/pilot, roles: ROLE_PILOT }
-                - { path: ^/customer, roles: ROLE_CUSTOMER }
+#            access_control:
+#                - { path: ^/admin, roles: ROLE_ADMIN }
+#                - { path: ^/pilot, roles: ROLE_PILOT }
+#                - { path: ^/customer, roles: ROLE_CUSTOMER }
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -34,9 +34,9 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    encoders:
-        App\Entity\User:
-            algorithm: auto
+#    encoders:
+#        App\Entity\User:
+#            algorithm: auto
     role_hierarchy:
         ROLE_ADMIN: [ 'ROLE_USER', 'admin' ]
         ROLE_PILOT: [ 'ROLE_USER', 'pilot' ]
