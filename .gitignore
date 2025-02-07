@@ -15,5 +15,9 @@
 ###< php-cs-fixer/shim ###
 
 ###> lexik/jwt-authentication-bundle ###
-/config/jwt/*.pem
+/config/jwt/
 ###< lexik/jwt-authentication-bundle ###
+
+#notes
+/notes
+/notes2
