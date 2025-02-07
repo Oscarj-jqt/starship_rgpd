@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Repository\StarshipRepository;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Psr\Log\LoggerInterface;
 
 #[Route('/api/starships')]
 class StarshipApiController extends AbstractController
@@ -38,6 +38,7 @@ class StarshipApiController extends AbstractController
     public function testLog(LoggerInterface $logger): Response
     {
         $logger->info('Test log entry');
+
         return new Response('Log ajouté');
     }
 }

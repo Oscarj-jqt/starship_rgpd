@@ -2,10 +2,10 @@
 
 namespace App\Logger;
 
+use App\Entity\DataProcessingLog;
+use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\LogRecord;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\DataProcessingLog;
 
 class DatabaseLogger extends AbstractProcessingHandler
 {
@@ -29,4 +29,3 @@ class DatabaseLogger extends AbstractProcessingHandler
         $this->entityManager->flush();
     }
 }
-
