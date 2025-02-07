@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Starship;
 use App\Repository\StarshipRepository;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[Route('/api/starships')]
 class StarshipApiController extends AbstractController
@@ -19,19 +21,19 @@ class StarshipApiController extends AbstractController
         return $this->json($starships);
     }
 
-    #[Route('/{id<\d+>}', methods: ['GET'])]
-    public function get(int $id, StarshipRepository $repository, LoggerInterface $logger): Response
+    /**
+     * @Route("/starship/{id}", name="view_starship")
+     */
+    public function viewStarship(Starship $starship, AuthorizationCheckerInterface $authChecker): Response
     {
-        $starship = $repository->find($id);
-
-        if (!$starship) {
-            throw $this->createNotFoundException('Starship not found');
+        // Vérifie si l'utilisateur a le droit de voir ce vaisseau
+        if (!$authChecker->isGranted('VIEW', $starship)) {
+            throw $this->createAccessDeniedException('You do not have permission to access this starship.');
         }
 
-        // adding a log when data is processed
-        $logger->info('User accessed a starship', ['userId' => 1]);
-
-        return $this->json($starship);
+        return $this->render('starship/view.html.twig', [
+            'starship' => $starship,
+        ]);
     }
 
     #[Route('/test-log', methods: ['GET'])]
@@ -39,6 +41,6 @@ class StarshipApiController extends AbstractController
     {
         $logger->info('Test log entry');
 
-        return new Response('Log ajouté');
+        return new Response('Log added');
     }
 }
