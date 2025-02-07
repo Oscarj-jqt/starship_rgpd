@@ -11,6 +11,15 @@ security:
                 class: App\Entity\User
                 property: email
     firewalls:
+        api:
+            pattern: ^/api
+            stateless: true
+            json_login:
+                check_path: /api/login_check
+                username_path: email
+                password_path: password
+            jwt: ~
+
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -45,7 +54,7 @@ security:
         ROLE_PILOT: [ 'ROLE_USER', 'pilot' ]
         ROLE_CUSTOMER: [ 'ROLE_USER', 'customer' ]
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api/consents, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
 
 #when@test:
