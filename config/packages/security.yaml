@@ -14,6 +14,17 @@ security:
         main:
             lazy: true
             provider: users_in_memory
+            pattern: ^/
+            form_login:
+                login_path: login
+                check_path: login
+            logout:
+                path: /logout
+            # Contrôle des accès selon les rôles JSON
+            access_control:
+                - { path: ^/admin, roles: ROLE_ADMIN }
+                - { path: ^/pilot, roles: ROLE_PILOT }
+                - { path: ^/customer, roles: ROLE_CUSTOMER }
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -23,6 +34,13 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+    role_hierarchy:
+        ROLE_ADMIN: [ 'ROLE_USER', 'admin' ]
+        ROLE_PILOT: [ 'ROLE_USER', 'pilot' ]
+        ROLE_CUSTOMER: [ 'ROLE_USER', 'customer' ]
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
