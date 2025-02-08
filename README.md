@@ -38,19 +38,6 @@ Avant de démarrer le projet, assure-toi d'avoir installé les éléments suivan
 ```bash
 git clone <lien_du_repo>
 cd starship
-
-```
-### Configuration base de donnée et clés secrètes à modifier
-DATABASE_URL="mysql://user:password@127.0.0.1:3306/starship_db"
-JWT_SECRET_KEY=%kernel.project_dir%/config/jwt/private.pem
-JWT_PUBLIC_KEY=%kernel.project_dir%/config/jwt/public.pem
-JWT_PASSPHRASE="votre_passphrase"
-
-### Générer les clés JWT
-```bash
-mkdir -p config/jwt
-openssl genpkey -algorithm RSA -out config/jwt/private.pem -aes256 -pass pass:votre_passphrase
-openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem -passin pass:votre_passphrase
 ```
 
 Démarrer le serveur 
