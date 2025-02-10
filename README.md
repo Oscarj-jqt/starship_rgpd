@@ -11,7 +11,7 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 * **Composer** est utilisé pour gérer les dépendances et structurer le projet.
 
 ### Gestion des Authentifications et Permissions
-* **LexikJWTAuthenticationBundle** permet la gestion des tokens JWT pour sécuriser l'API.
+* **Authentification avec token** permet la gestion des tokens JWT pour sécuriser l'API.
 * **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
 * **Monolog** est utilisé pour enregistrer les actions sensibles (connexion, modification de données critiques).
 
