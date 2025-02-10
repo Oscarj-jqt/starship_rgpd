@@ -9,15 +9,12 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 * **MySQL** est utilisé pour stocker toutes les données liées aux utilisateurs, pilotes et vaisseaux.
 * **Doctrine ORM** est employé pour interagir avec la base de données et simplifier les opérations CRUD.
 * **Composer** est utilisé pour gérer les dépendances et structurer le projet.
-
-### Gestion des Authentifications et Permissions
-* **Authentification avec token** permet la gestion des tokens JWT pour sécuriser l'API.
-* **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
-* **Monolog** est utilisé pour enregistrer les actions sensibles (connexion, modification de données critiques).
+  
 
 ## Fonctionnalités Principales
 * **Authentification et gestion des utilisateurs** : Système sécurisé avec JWT.
 * **Stockage sécurisé des données clients** : Création, modification et affichage des vaisseaux spatiaux.
+* * **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
 * **Traçabilité et contrôle des accès** : Enregistrement des actions critiques pour garantir la traçabilité.
 * **Droit à l'oubli et anonymisation des données** : Possibilité pour les utilisateurs de demander la suppression ou l’anonymisation de leurs données.
 * **Gestion des consentements** : API permettant aux utilisateurs de gérer leurs préférences en matière de stockage et d’utilisation des données.
