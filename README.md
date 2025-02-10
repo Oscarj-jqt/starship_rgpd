@@ -33,7 +33,7 @@ Avant de démarrer le projet, assure-toi d'avoir installé les éléments suivan
 
 ### Cloner le projet
 ```bash
-git clone <lien_du_repo>
+git clone <https://github.com/Oscarj-jqt/starship_rgpd>
 cd starship
 ```
 
