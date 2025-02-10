@@ -17,7 +17,7 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 
 ## Fonctionnalités Principales
 * **Authentification et gestion des utilisateurs** : Système sécurisé avec JWT.
-* **Gestion des vaisseaux** : Création, modification et affichage des vaisseaux spatiaux.
+* **Stockage sécurisé des données clients** : Création, modification et affichage des vaisseaux spatiaux.
 * **Suivi des accès et journalisation** : Enregistrement des actions critiques pour garantir la traçabilité.
 * **Droit à l'oubli et anonymisation des données** : Possibilité pour les utilisateurs de demander la suppression ou l’anonymisation de leurs données.
 * **Gestion des consentements** : API permettant aux utilisateurs de gérer leurs préférences en matière de stockage et d’utilisation des données.
