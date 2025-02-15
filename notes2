@@ -1,0 +1,32 @@
+Intégrer progressivement des principes du RGPD dans le projet
+Simuler un registre des traitements et la gestion des consentements
+Implémenter des fonctionnalités conformes aux droits des utilisateurs (accès, export, suppression)
+
+Mise en place d’un registre des traitements (SQL + logs Monolog)
+Enregistrer les accès et modifications des données personnelles:
+
+-ajouter une entité DataProcessingLog (historique des accès aux données)
+-logger les accès en base de données avec Monolog
+-afficher ces logs dans un tableau d’administration
+
+
+Gestion du consentement des utilisateurs
+
+Simuler la collecte et l’enregistrement du consentement pour le traitement des données
+
+-créer une entité Consent avec (user_id, date, type de consentement)
+-ajouter une page pour afficher les consentements et permettre leur retrait
+
+
+Droit d’accès et d’export des données personnelles
+
+Permettre aux utilisateurs de voir et télécharger leurs données:
+-ajouter un endpoint /api/user/{id}/export qui retourne un fichier JSON/CSV
+-afficher un bouton "Télécharger mes données" dans une interface fictive
+
+
+Droit à l’oubli : Suppression et anonymisation des données
+
+Permettre aux utilisateurs de demander la suppression de leurs données:
+-implémenter une méthode pour anonymiser/supprimer les informations personnelles
+-ajouter un bouton "Supprimer mon compte"

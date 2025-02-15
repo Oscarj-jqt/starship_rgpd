@@ -1,0 +1,36 @@
+Création de l'app
+symfony new symfony_sql/symfony_sql --version="7.2.x" --webapp
+
+Lancer le serveur
+symfony serve
+
+Package de style de Symfony pour la convention de style
+composer require cs-fixer-shim
+Régler la structure des fichiers pour que ca corresponde à Symfony
+./vendor/bin/php-cs-fixer fix
+
+Utilisation de twig pour ajouter des templates HTML
+composer require twig
+
+Ajout du package serializer pour traiter les propriétés private avec des getters public (objet json)
+composer require serializer
+
+Un service Symfony est un objet qui "travaille"
+exemple nos controller sont des services (créer des objets réponses)
+
+Le Repository est une classe qui fetch un type de donnée
+
+On utilise Doctrine pour connecter le project avec SQL database
+composer require symfony/orm-pack
+Puis configurer la connexion dans .env
+
+Ensuite Création des classes entités (table de la database)
+php bin/console make:entity starship
+
+Màj database
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+La classe Interface permet d'utiliser une entité créée dans le système de sécurité de Syfony
+
+pem pass phrase :
