@@ -1,6 +1,6 @@
 # Gestion des Vaisseaux Spatiaux - Starship API
 
-Ce projet est une application permettant de gérer une flotte de vaisseaux spatiaux, incluant les utilisateurs, les pilotes et les vaisseaux. Le système offre des fonctionnalités comme la gestion des accès, la journalisation des actions et l'application des principes de conformité aux données (RGPD). Le backend est développé en **PHP avec Symfony**, et la base de données utilisée est **MySQL**.
+Ce projet est une application permettant de gérer une flotte de vaisseaux spatiaux, incluant les utilisateurs, les pilotes et les vaisseaux. Le système offre des fonctionnalités comme la gestion des accès et l'application des principes de conformité aux données (RGPD). Le backend est développé en **PHP avec Symfony**, et la base de données utilisée est **MySQL**.
 
 ## Description des Choix Techniques
 
@@ -11,7 +11,6 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 ### Gestion des Authentifications et Permissions
 * **LexikJWTAuthenticationBundle** permet la gestion des tokens JWT pour sécuriser l'API.
 * **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
-* **Monolog** est utilisé pour enregistrer les actions sensibles (connexion, modification de données critiques).
 
 ## Fonctionnalités Principales
 * **Authentification et gestion des utilisateurs** : Système sécurisé avec JWT.
