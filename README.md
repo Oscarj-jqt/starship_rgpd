@@ -7,7 +7,7 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 ### Backend - PHP avec Symfony & MySQL
 * **Symfony** est utilisé pour développer une API REST robuste et gérer les opérations backend.
 * **MySQL** est utilisé pour stocker toutes les données liées aux utilisateurs, pilotes et vaisseaux.
-* 
+
 ### Gestion des Authentifications et Permissions
 * **LexikJWTAuthenticationBundle** permet la gestion des tokens JWT pour sécuriser l'API.
 * **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
