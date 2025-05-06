@@ -27,7 +27,6 @@ Avant de démarrer le projet, assure-toi d'avoir installé les éléments suivan
 * **Composer** pour gérer les dépendances
 * **Symfony CLI** pour exécuter l’application
 * **MySQL** 8.0 ou supérieur
-* **Postman** (optionnel, pour tester l’API)
 
 ## Instructions pour l'installation
 
