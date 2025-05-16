@@ -10,7 +10,7 @@ Ce projet est une application permettant de gérer une flotte de vaisseaux spati
 
 ### Gestion des Authentifications et Permissions
 * **LexikJWTAuthenticationBundle** permet la gestion des tokens JWT pour sécuriser l'API.
-* **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils (Admin, Pilote, Ingénieur).
+* **Rôles et permissions** sont mis en place pour restreindre les accès selon les profils.
 
 ## Fonctionnalités Principales
 * **Authentification et gestion des utilisateurs** : Système sécurisé avec JWT.
